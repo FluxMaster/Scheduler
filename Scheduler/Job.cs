@@ -16,7 +16,6 @@ namespace Scheduler
         private List<Person> people;
         private int ID;
         private Person doer;
-
         public Job(String name, int day, int time, int length)
         {
             this.name = name;
@@ -31,7 +30,10 @@ namespace Scheduler
         {
             this.people.Add(p);
         }
-
+        public void setDoer(Person p)
+        {
+            this.doer = p;
+        }
         public bool conflicts(Job j)
         {
             if(conDay(j.day) && conTime(j.time,j.length))
@@ -44,8 +46,8 @@ namespace Scheduler
         public bool conTime(int time, int length)
         {
             return  this.time == time
-                    || (this.time - time < 0 && Math.Abs(this.time - time) <= this.length)
-                    || (this.time - time > 0 && Math.Abs(this.time - time) <= length);
+                    || (this.time - time < 0 && Math.Abs(this.time - time) < this.length)
+                    || (this.time - time > 0 && Math.Abs(this.time - time) < length);
         }
 
         public bool conDay(int day) { return this.day == day; }

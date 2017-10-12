@@ -21,6 +21,7 @@ namespace Scheduler
             this.avail = 0;
             this.hours = 0;
             jobsList = new List<Job>(0);
+            week = new Day[7];
             for (int i = 0; i < 7; i++)
             {
                 week[i] = new Day();
@@ -38,8 +39,9 @@ namespace Scheduler
                     return false;
                 }
             }
+
+            j.setDoer(this);
             jobsList.Add(j);
-            j.addPerson(this);
             return true;
         }
     }
