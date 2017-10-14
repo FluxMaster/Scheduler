@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Scheduler
 {
-    class Person
+    class Person : IComparable<Person>
     {
         private String name;
         private int avail;
@@ -29,20 +29,48 @@ namespace Scheduler
         }
 
         //returns true if successful add, false if not
-        public bool addJob(Job j)
+        public bool AddJob(Job j)
         {
             //check for conflicts
-            foreach(Job job in jobsList)
+            foreach (Job job in jobsList)
             {
-                if(j.conflicts(job))
+                if (j.Conflicts(job))
                 {
                     return false;
                 }
             }
 
-            j.setDoer(this);
+            j.SetDoer(this);
             jobsList.Add(j);
             return true;
+        }
+
+        public int CompareTo(Person other)
+        {
+            if (this.avail > other.avail)
+            {
+                return 1;
+            }
+            else if(this.avail <other.avail)
+            {
+                return -1;
+            }
+            return 0;
+        }
+
+        public void IncAvail()
+        {
+            this.avail++;
+        }
+
+        public override string ToString()
+        {
+            String result = name + "\n";
+            foreach(Job job in jobsList)
+            {
+                result += job.ToString() + "\n";
+            }
+            return result;
         }
     }
 }

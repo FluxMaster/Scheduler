@@ -29,7 +29,7 @@ namespace Scheduler
             Job clean = new Job("clean", 0, 2, 1);
             Job clean2 = new Job("clean", 0, 1, 1);
 
-            if (andy.addJob(clean))
+            if (andy.AddJob(clean))
             {
                 result1 = "Success";
             }
@@ -38,7 +38,7 @@ namespace Scheduler
                 result1 = "Failure";
             }
 
-            if (andy.addJob(clean2))
+            if (andy.AddJob(clean2))
             {
                 result2 = "Success";
             }

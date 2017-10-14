@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Scheduler
 {
-    class Job
+    class Job: IComparable<Job>
     {
         private static int count;
         private String name;
@@ -26,30 +26,49 @@ namespace Scheduler
             people = new List<Person>(0);
         }
 
-        public void addPerson(Person p)
+        public void AddPerson(Person p)
         {
             this.people.Add(p);
         }
-        public void setDoer(Person p)
+        public void SetDoer(Person p)
         {
             this.doer = p;
         }
-        public bool conflicts(Job j)
+        public bool Conflicts(Job j)
         {
-            if(conDay(j.day) && conTime(j.time,j.length))
+            if(ConDay(j.day) && ConTime(j.time,j.length))
             {
                 return true;
             }
             return false;
         }
 
-        public bool conTime(int time, int length)
+        public bool ConTime(int time, int length)
         {
             return  this.time == time
                     || (this.time - time < 0 && Math.Abs(this.time - time) < this.length)
                     || (this.time - time > 0 && Math.Abs(this.time - time) < length);
         }
 
-        public bool conDay(int day) { return this.day == day; }
+        public bool ConDay(int day) { return this.day == day; }
+
+        public override string ToString()
+        {
+            string result = name + " on " + day + " at " + time;
+            return result;
+        }
+
+        public int CompareTo(Job other)
+        {
+            if(this.people.Count > other.people.Count)
+            {
+                return 1;
+            }
+            else if(this.people.Count < other.people.Count)
+            {
+                return -1;
+            }
+            return 0;
+        }
     }
 }
