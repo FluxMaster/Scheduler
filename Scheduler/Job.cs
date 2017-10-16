@@ -13,9 +13,10 @@ namespace Scheduler
         private int time;
         private int day;
         private int length;
-        private List<Person> people;
+        private List<Person> possibleWorkers;
         private int ID;
         private Person doer;
+
         public Job(String name, int day, int time, int length)
         {
             this.name = name;
@@ -23,12 +24,12 @@ namespace Scheduler
             this.day = day;
             this.length = length;
             this.ID = count++;
-            people = new List<Person>(0);
+            possibleWorkers = new List<Person>(0);
         }
 
         public void AddPerson(Person p)
         {
-            this.people.Add(p);
+            this.possibleWorkers.Add(p);
         }
         public void SetDoer(Person p)
         {
@@ -60,11 +61,11 @@ namespace Scheduler
 
         public int CompareTo(Job other)
         {
-            if(this.people.Count > other.people.Count)
+            if(this.possibleWorkers.Count > other.possibleWorkers.Count)
             {
                 return 1;
             }
-            else if(this.people.Count < other.people.Count)
+            else if(this.possibleWorkers.Count < other.possibleWorkers.Count)
             {
                 return -1;
             }
