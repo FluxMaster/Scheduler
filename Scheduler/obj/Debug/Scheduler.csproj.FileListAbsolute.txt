@@ -9,3 +9,16 @@ C:\Users\guerr\Documents\Software Engineering\Team project\Scheduler\Scheduler-m
 C:\Users\guerr\Documents\Software Engineering\Team project\Scheduler\Scheduler-master\Scheduler\obj\Debug\Scheduler.ScheduleMaker.resources
 C:\Users\guerr\Documents\Software Engineering\Team project\Scheduler\Scheduler-master\Scheduler\obj\Debug\Scheduler.ScheduleCalculator.resources
 C:\Users\guerr\Documents\Software Engineering\Team project\Scheduler\Scheduler-master\Scheduler\obj\Debug\Scheduler.Login.resources
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\bin\Debug\Scheduler.exe.config
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\bin\Debug\Scheduler.exe
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\bin\Debug\Scheduler.pdb
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Debug\Scheduler.csprojResolveAssemblyReference.cache
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Debug\Scheduler.Login.resources
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Debug\Scheduler.ScheduleCalculator.resources
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Debug\Scheduler.ScheduleMaker.resources
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Debug\Scheduler.Properties.Resources.resources
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Debug\Scheduler.csproj.GenerateResource.Cache
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Debug\Scheduler.csproj.CoreCompileInputs.cache
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Debug\Scheduler.exe
+C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Debug\Scheduler.pdb
+C:\Users\guerr\Documents\Software Engineering\Team project\Scheduler\Scheduler-master\Scheduler\obj\Debug\Scheduler.csproj.CoreCompileInputs.cache
