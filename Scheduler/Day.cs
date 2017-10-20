@@ -24,18 +24,17 @@ namespace Scheduler
 
         public Day(bool[] times)
         {
-            time = new bool[24];
-            if (times.Length == 24)
+            this.time = times;
+        }
+
+        public override string ToString()
+        {
+            String output = "";
+            for(int i=0; i<24; i++)
             {
-                this.time = times;
+                output += this.time[i] + ",";
             }
-            else
-            {
-                for (int i = 0; i < time.Length; i++)
-                {
-                    time[i] = false;
-                }
-            }
+            return output;
         }
     }
 }

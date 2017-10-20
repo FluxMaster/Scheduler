@@ -19,7 +19,13 @@ namespace Scheduler
 
         private void Schedule_Calculator_Load(object sender, EventArgs e)
         {
-            
+          
+        }
+
+        private void CalcBtn_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1();
+            form1.ShowDialog();
         }
     }
 }
