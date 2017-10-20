@@ -38,5 +38,10 @@ namespace Scheduler
                 MessageBox.Show("Wrong password.");
             }
         }
+
+        private void Login_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
