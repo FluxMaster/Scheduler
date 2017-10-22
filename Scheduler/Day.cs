@@ -11,7 +11,6 @@ namespace Scheduler
         //If person is blocked at "time i" then time[i]==true
         //24 hour clock where 0000 hours = time[0], 0100 hours == time[1], ..., 2300 hours == time[23]
         //Only 1 hour increments for now.
-        //timeslots start at midnight(12am-1am and end at 11pm-12am) 
         private bool[] time; 
 
         public Day()
@@ -25,18 +24,7 @@ namespace Scheduler
 
         public Day(bool[] times)
         {
-            time = new bool[24];
-            if (times.Length == 24)
-            {
-                this.time = times;
-            }
-            else
-            {
-                for (int i = 0; i < time.Length; i++)
-                {
-                    time[i] = false;
-                }
-            }
+            this.time = times;
         }
 
         public bool[] getTime()
@@ -62,10 +50,10 @@ namespace Scheduler
         public static String numberToDay(int x)
         {
             String day = "";
-            switch(x)
+            switch (x)
             {
                 case 0:
-                    day= "Sunday";
+                    day = "Sunday";
                     break;
                 case 1:
                     day = "Monday";
@@ -86,7 +74,7 @@ namespace Scheduler
                     day = "Saturday";
                     break;
                 default:
-                    day="Error: No such day exists.";
+                    day = "Error: No such day exists.";
                     break;
             }
             return day;
@@ -95,7 +83,7 @@ namespace Scheduler
         public static int dayToNumber(String x)
         {
             int num;
-            switch(x)
+            switch (x)
             {
                 case "Sunday":
                     num = 0;
@@ -125,7 +113,7 @@ namespace Scheduler
             return num;
         }
 
-        private static String[] timeList = {"12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM"};
+        private static String[] timeList = { "12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM" };
 
         public static String numberToTime(int x)
         {
@@ -134,7 +122,7 @@ namespace Scheduler
 
         public static int timeToNumber(String time)
         {
-            for (int i =0; i < timeList.Length;i++)
+            for (int i = 0; i < timeList.Length; i++)
             {
                 if (time.Equals(timeList[i]))
                     return i;
@@ -142,8 +130,14 @@ namespace Scheduler
             return -1;
         }
 
-
-
-
+        public override string ToString()
+        {
+            String output = "";
+            for(int i=0; i<24; i++)
+            {
+                output += this.time[i] + ",";
+            }
+            return output;
+        }
     }
 }

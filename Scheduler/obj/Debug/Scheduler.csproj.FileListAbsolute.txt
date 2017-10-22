@@ -22,4 +22,32 @@ C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Deb
 C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Debug\Scheduler.exe
 C:\Users\guerr\Downloads\Scheduler-master (2)\Scheduler-master\Scheduler\obj\Debug\Scheduler.pdb
 C:\Users\guerr\Documents\Software Engineering\Team project\Scheduler\Scheduler-master\Scheduler\obj\Debug\Scheduler.csproj.CoreCompileInputs.cache
+C:\Users\Andy\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.csprojResolveAssemblyReference.cache
+C:\Users\Andy\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.Login.resources
+C:\Users\Andy\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.ScheduleCalculator.resources
+C:\Users\Andy\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.ScheduleMaker.resources
+C:\Users\Andy\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.Properties.Resources.resources
+C:\Users\Andy\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.csproj.GenerateResource.Cache
+C:\Users\Andy\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.csproj.CoreCompileInputs.cache
+C:\Users\Andy\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.exe
+C:\Users\Andy\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.pdb
+C:\Users\Andy\source\repos\Scheduler\Scheduler\bin\Debug\Scheduler.exe.config
+C:\Users\Andy\source\repos\Scheduler\Scheduler\bin\Debug\Scheduler.exe
+C:\Users\Andy\source\repos\Scheduler\Scheduler\bin\Debug\Scheduler.pdb
+C:\Users\Andy\source\repos\Scheduler\Scheduler\obj\Debug\Scheduler.Form1.resources
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\bin\Debug\Scheduler.exe.config
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\bin\Debug\Scheduler.exe
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\bin\Debug\Scheduler.pdb
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.csprojResolveAssemblyReference.cache
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.Form1.resources
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.JobEditor.resources
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.Login.resources
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.ScheduleCalculator.resources
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.ScheduleMaker.resources
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.Properties.Resources.resources
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.csproj.GenerateResource.Cache
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.csproj.CoreCompileInputs.cache
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.exe
+C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.pdb
+C:\Users\guerr\Documents\Software Engineering\Team project\Scheduler\Scheduler-master\Scheduler\obj\Debug\Scheduler.Form1.resources
 C:\Users\guerr\Documents\Software Engineering\Team project\Scheduler\Scheduler-master\Scheduler\obj\Debug\Scheduler.JobEditor.resources

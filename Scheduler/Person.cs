@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,14 +11,16 @@ namespace Scheduler
     class Person : IComparable<Person>
     {
         private String name;
+        private String ID;
         private int avail;
         private int hours;
         private Day[] week;
         private List<Job> jobsList;
 
-        public Person(String name)
+        public Person(String name, String ID)
         {
             this.name = name;
+            this.ID = ID;
             this.avail = 0;
             this.hours = 0;
             jobsList = new List<Job>(0);
@@ -26,6 +29,16 @@ namespace Scheduler
             {
                 week[i] = new Day();
             }
+        }
+
+        public Person(String name, String ID, Day[] week)
+        {
+            this.name = name;
+            this.ID = ID;
+            this.avail = 0;
+            this.hours = 0;
+            jobsList = new List<Job>(0);
+            this.week = week;
         }
 
         //returns true if successful add, false if not
@@ -65,12 +78,20 @@ namespace Scheduler
 
         public override string ToString()
         {
-            String result = name + "\n";
+            String result = name + " " + ID + "\n";
             foreach(Job job in jobsList)
             {
                 result += job.ToString() + "\n";
             }
             return result;
+        }
+
+        public void ConsoleDebug()
+        {
+            for(int i=0; i<7; i++)
+            {
+               Debug.Write(this.week[i]+"\n");
+            }
         }
     }
 }

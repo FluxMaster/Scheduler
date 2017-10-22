@@ -36,7 +36,7 @@
             // 
             // saveBtn
             // 
-            this.saveBtn.Location = new System.Drawing.Point(75, 21);
+            this.saveBtn.Location = new System.Drawing.Point(46, 21);
             this.saveBtn.Name = "saveBtn";
             this.saveBtn.Size = new System.Drawing.Size(75, 23);
             this.saveBtn.TabIndex = 0;
@@ -46,7 +46,7 @@
             // 
             // loadBtn
             // 
-            this.loadBtn.Location = new System.Drawing.Point(202, 21);
+            this.loadBtn.Location = new System.Drawing.Point(212, 21);
             this.loadBtn.Name = "loadBtn";
             this.loadBtn.Size = new System.Drawing.Size(75, 23);
             this.loadBtn.TabIndex = 1;
@@ -56,34 +56,34 @@
             // 
             // addBtn
             // 
-            this.addBtn.Location = new System.Drawing.Point(329, 21);
+            this.addBtn.Location = new System.Drawing.Point(378, 21);
             this.addBtn.Name = "addBtn";
             this.addBtn.Size = new System.Drawing.Size(75, 23);
             this.addBtn.TabIndex = 2;
             this.addBtn.Text = "Add Job";
             this.addBtn.UseVisualStyleBackColor = true;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
             // 
             // listTxtBox
             // 
-            this.listTxtBox.Location = new System.Drawing.Point(12, 59);
+            this.listTxtBox.Location = new System.Drawing.Point(13, 66);
             this.listTxtBox.Multiline = true;
             this.listTxtBox.Name = "listTxtBox";
             this.listTxtBox.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.listTxtBox.Size = new System.Drawing.Size(472, 302);
-            this.listTxtBox.TabIndex = 4;
+            this.listTxtBox.TabIndex = 3;
             // 
             // JobEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 373);
+            this.ClientSize = new System.Drawing.Size(503, 386);
             this.Controls.Add(this.listTxtBox);
             this.Controls.Add(this.addBtn);
             this.Controls.Add(this.loadBtn);
             this.Controls.Add(this.saveBtn);
             this.Name = "JobEditor";
             this.Text = "JobEditor";
-            this.Load += new System.EventHandler(this.JobEditor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
