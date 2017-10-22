@@ -35,8 +35,10 @@ namespace Scheduler
         public void button1_Click(object sender, EventArgs e)
         {
             Calculator.Calculate();
-            this.label1.Text = Calculator.Out1;
-            this.label2.Text = Calculator.Out2;
+            this.label1.Text = Calculator.result1;
+            this.label2.Text = Calculator.result2;
         }
+
+       
     }
 }

@@ -46,13 +46,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Day.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="Job.cs" />
+    <Compile Include="JobEditor.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="JobEditor.Designer.cs">
+      <DependentUpon>JobEditor.cs</DependentUpon>
     </Compile>
-    <Compile Include="Job.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,8 +74,8 @@
     <Compile Include="ScheduleCalculator.Designer.cs">
       <DependentUpon>ScheduleCalculator.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="JobEditor.resx">
+      <DependentUpon>JobEditor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
