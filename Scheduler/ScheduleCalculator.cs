@@ -27,5 +27,16 @@ namespace Scheduler
             Form1 form1 = new Form1();
             form1.ShowDialog();
         }
+
+        private void JobEditBtn_Click(object sender, EventArgs e)
+        {
+            JobEditor jbE = new JobEditor();
+            jbE.ShowDialog();
+        }
+
+        private void aboutBtn_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("About goes here.", "About");
+        }
     }
 }

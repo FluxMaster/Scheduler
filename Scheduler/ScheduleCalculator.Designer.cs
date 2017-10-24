@@ -41,6 +41,7 @@
             this.JobEditBtn.TabIndex = 1;
             this.JobEditBtn.Text = "Job List Editor";
             this.JobEditBtn.UseVisualStyleBackColor = true;
+            this.JobEditBtn.Click += new System.EventHandler(this.JobEditBtn_Click);
             // 
             // aboutBtn
             // 
@@ -50,6 +51,7 @@
             this.aboutBtn.TabIndex = 2;
             this.aboutBtn.Text = "About";
             this.aboutBtn.UseVisualStyleBackColor = true;
+            this.aboutBtn.Click += new System.EventHandler(this.aboutBtn_Click);
             // 
             // CalcBtn
             // 
