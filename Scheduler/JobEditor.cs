@@ -16,45 +16,58 @@ namespace Scheduler
         public JobEditor()
         {
             InitializeComponent();
+            loadList();
         }
 
-        //THIS METHOD DOES NOT WORK AS INTENDED YET, ALMOST DONE, WILL FIX LATER
+        //accessor methods so code in other forms can use the listTxtBox properties
+        public string TextBoxValue
+        {
+            get
+            {
+                return listTxtBox.Text;
+            }
+            set
+            {
+                listTxtBox.Text = value;
+            }
+        }
+
         //saves all text from textbox to csv file, overwrites it
         private void saveBtn_Click(object sender, EventArgs e)
         {
-            //String temp = "";
+            saveList();
+        }
+
+        private void saveList()
+        {
             String[] lines;
-            String text = "";
             int count = 1;
             try
             {
                 //goes two directories up
-                // string directory = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
-
+                string directory = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
                 //object to write to file
-                // StreamWriter sw = new StreamWriter(directory + "/" + "Jobs/Jobs.csv");
-
-                //goes line by line through textbox using comma as delimiter
-                for (int x = 0; x < listTxtBox.Lines.Length; x++)
+                using (StreamWriter sw = new StreamWriter(directory + "/" + "Jobs/Jobs.csv"))
                 {
-                    text += listTxtBox.Lines[x].Split(',');
-                    text += "\n";
-                    /*lines = listTxtBox.Lines[x].Split(',');
-                    sw.Write(lines[0] + "," +
-                        lines[1] + "," +
-                        Day.numberToDay(Int32.Parse(lines[2])) + "," +
-                        Day.numberToTime(Int32.Parse(lines[3])) + "\n");
-                    count++;*/
+
+                    //goes line by line through textbox using comma as delimiter
+                    for (int x = 0; x < listTxtBox.Lines.Length - 1; x++)
+                    {
+                        lines = listTxtBox.Lines[x].Split(',');
+
+                        sw.Write(lines[0] + "," +
+                               Day.dayToNumber((lines[1])) + "," +
+                               Day.timeToNumber((lines[2])) + "," + lines[3] + "\n");
+                        count++;
+                    }
+                    sw.Close();
                 }
-               // MessageBox.Show(text);
-                //sw.Close();
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Failed to save file at line " + count);
+                MessageBox.Show("Failed to save file at line " + count+" "+ex);
             }
         }
-
         private void loadBtn_Click(object sender, EventArgs e)
         {
             loadList();
@@ -70,34 +83,39 @@ namespace Scheduler
             {
                 //directory two folders up from current directory
                 string directory = System.IO.Directory.GetParent(System.IO.Directory.GetParent(Environment.CurrentDirectory).ToString()).ToString();
-                StreamReader sr = new StreamReader(directory + "/" + "Jobs/Jobs.csv");
-                String text = "";
-                String[] lines;
-
-                //load data from csv file to textbox using comma as delimiter
-                while (!sr.EndOfStream)
+                using (StreamReader sr = new StreamReader(directory + "/" + "Jobs/Jobs.csv"))
                 {
-                    text = sr.ReadLine();
-                    lines = text.Split(','); //use comma as delimiter
+                    String text = "";
+                    String[] lines;
 
-                    temp += lines[0] + "," +
-                    Day.numberToDay(Int32.Parse(lines[1])) + "," +
-                    Day.numberToTime(Int32.Parse(lines[2])) + "," +
-                    lines[3] + "\r\n";
-                    count++;
+                    //load data from csv file to textbox using comma as delimiter
+                    while (!sr.EndOfStream)
+                    {
+                        text = sr.ReadLine();
+                        lines = text.Split(','); //use comma as delimiter
+
+                        temp += lines[0] + "," +
+                        Day.numberToDay(Int32.Parse(lines[1])) + "," +
+                        Day.numberToTime(Int32.Parse(lines[2])) + "," +
+                        lines[3] + "\r\n";
+                        count++;
+                    }
+                    sr.Close();
                 }
-                sr.Close();
             }
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("Failed to open file at line " + count);
+                MessageBox.Show("Failed to open file at line " + count+" "+ex);
             }
 
             listTxtBox.Text = temp;
         }
 
+        //creates instance of Addjob form and shows it
         private void addBtn_Click(object sender, EventArgs e)
         {
+            AddJob addform = new AddJob();
+            addform.ShowDialog();
 
         }
     }
