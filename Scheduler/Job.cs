@@ -27,14 +27,16 @@ namespace Scheduler
             possibleWorkers = new List<Person>(0);
         }
 
-        public void AddPerson(Person p)
+        public bool AddPerson(Person p)
         {
             this.possibleWorkers.Add(p);
         }
+		
         public void SetDoer(Person p)
         {
             this.doer = p;
         }
+		
         public bool Conflicts(Job j)
         {
             if(ConDay(j.day) && ConTime(j.time,j.length))
@@ -53,6 +55,40 @@ namespace Scheduler
 
         public bool ConDay(int day) { return this.day == day; }
 
+		public bool CanDoHelper(Day[] week)
+		{
+			for(int i = this.time; i<this.time+length; i++)
+			{
+				if(week[this.day].getBlock(i))
+					return false;
+			}
+			return true;
+		}
+		
+		
+		public bool Calculate()
+		{
+			bool flag = false;
+			foreach(Person p in possibleWorkers)
+			{
+				if(p.AddJob(this))
+				{
+					flag = true;
+					break;
+				}
+			}
+			return bool;
+		}
+		
+		
+		
+		
+		
+		public void Sort()
+		{
+			this.possibleWorkers.Sort();
+		}
+		
         public override string ToString()
         {
             string result = name + " on " + day + " at " + time;

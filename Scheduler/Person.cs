@@ -57,6 +57,13 @@ namespace Scheduler
             jobsList.Add(j);
             return true;
         }
+		
+		//returns true if this person is initially
+		//available for this job.
+		public bool CanDo(Job j)
+		{
+			return j.CanDoHelper(this.week);
+		}
 
         public int CompareTo(Person other)
         {
