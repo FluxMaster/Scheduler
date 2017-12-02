@@ -94,6 +94,6 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button loadBtn;
         private System.Windows.Forms.Button addBtn;
-        private System.Windows.Forms.TextBox listTxtBox;
+        public System.Windows.Forms.TextBox listTxtBox;
     }
 }

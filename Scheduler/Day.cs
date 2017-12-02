@@ -92,19 +92,19 @@ namespace Scheduler
                     num = 1;
                     break;
                 case "Tuesday":
-                    num = 1;
+                    num = 2;
                     break;
                 case "Wednesday":
-                    num = 0;
+                    num = 3;
                     break;
                 case "Thursday":
-                    num = 0;
+                    num = 4;
                     break;
                 case "Friday":
-                    num = 0;
+                    num = 5;
                     break;
                 case "Saturday":
-                    num = 0;
+                    num = 6;
                     break;
                 default:
                     num = -1;
@@ -113,7 +113,7 @@ namespace Scheduler
             return num;
         }
 
-        private static String[] timeList = { "12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM" };
+        public static String[] timeList = { "12AM", "1AM", "2AM", "3AM", "4AM", "5AM", "6AM", "7AM", "8AM", "9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM", "6PM", "7PM", "8PM", "9PM", "10PM", "11PM" };
 
         public static String numberToTime(int x)
         {

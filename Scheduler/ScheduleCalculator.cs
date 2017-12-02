@@ -28,12 +28,14 @@ namespace Scheduler
             form1.ShowDialog();
         }
 
-        private void JobEditBtn_Click(object sender, EventArgs e)
+        //opens JobEditor form when clicked
+        public void JobEditBtn_Click(object sender, EventArgs e)
         {
             JobEditor jbE = new JobEditor();
             jbE.ShowDialog();
         }
 
+        //displays about info when clicked
         private void aboutBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("About goes here.", "About");

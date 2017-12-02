@@ -51,3 +51,4 @@ C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-Calcul
 C:\Users\guerr\Downloads\Scheduler-CalculatorScheduleParser (1)\Scheduler-CalculatorScheduleParser\Scheduler\obj\Debug\Scheduler.pdb
 C:\Users\guerr\Documents\Software Engineering\Team project\Scheduler\Scheduler-master\Scheduler\obj\Debug\Scheduler.Form1.resources
 C:\Users\guerr\Documents\Software Engineering\Team project\Scheduler\Scheduler-master\Scheduler\obj\Debug\Scheduler.JobEditor.resources
+C:\Users\guerr\Documents\Software Engineering\Team project\Scheduler\Scheduler-master\Scheduler\obj\Debug\Scheduler.AddJob.resources
