@@ -65,7 +65,7 @@ namespace Scheduler
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Failed to save file at line " + count+" "+ex);
+                MessageBox.Show("Failed to save file at line " + count/*+" "+ex*/);
             }
         }
         private void loadBtn_Click(object sender, EventArgs e)
@@ -105,7 +105,7 @@ namespace Scheduler
             }
             catch(Exception ex)
             {
-                MessageBox.Show("Failed to open file at line " + count+" "+ex);
+                MessageBox.Show("Failed to open file at line " + count/*+" "+ex*/);
             }
 
             listTxtBox.Text = temp;

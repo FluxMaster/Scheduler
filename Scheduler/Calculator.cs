@@ -12,7 +12,7 @@ namespace Scheduler
     {
         public static String Out1;
         public static String Out2;
-
+       
 
         /// <summary>
         /// The main entry point for the application.
@@ -25,61 +25,65 @@ namespace Scheduler
             Application.Run(new Login());
         }
 
-        public static void Calculate()
+        public static void Calculate(int hours)
         {
+            
             /** Parse Jobs **/
-			StreamReader JobsReader = new StreamReader("./Jobs/Jobs.csv");
+            StreamReader JobsReader = new StreamReader("../../Jobs/Jobs.csv");
 			List<Job> JobsList = new List<Job>();
 			
 			
-			while(JobsReader.hasNextLine())
+			while(!JobsReader.EndOfStream)
 			{
-				String name = new String();
-				while(jobs.Reader.Peek() != ',')
+				String name = "";
+				while(JobsReader.Peek() != ',')
 				{
 					name += (char)JobsReader.Read();
 				}
+                Debug.WriteLine(name);
 				JobsReader.Read();
 				
-				String temp = new String();
-				while(jobs.Reader.Peek() != ',')
+				String temp = "";
+				while(JobsReader.Peek() != ',')
 				{
 					temp += (char)JobsReader.Read();
 				}
 				JobsReader.Read();
-				int day = Int32.parse(temp);
+                Debug.WriteLine(temp);
+				int day = Int32.Parse(temp);
 				
-				String temp = new String();
-				while(jobs.Reader.Peek() != ',')
+				temp = "";
+				while(JobsReader.Peek() != ',')
 				{
 					temp += (char)JobsReader.Read();
 				}
 				JobsReader.Read();
-				int time = Int32.parse(temp);
+                Debug.WriteLine(temp);
+				int time = Int32.Parse(temp);
 				
-				String temp = new String();
-				while(jobs.Reader.Peek() != ',')
+				temp = "";
+                while (JobsReader.Peek() != '\n')
 				{
 					temp += (char)JobsReader.Read();
 				}
 				JobsReader.Read();
-				int length = Int32.parse(temp);
+                Debug.WriteLine(temp);
+				int length = Int32.Parse(temp);
 				
-				JobsList.add(new Job(name,day, time, length));
+				JobsList.Add(new Job(name,day, time, length));
 			}
 			
 			//Jobs List now contains all the Jobs
 			
             /** Parse People **/
 			
-			String[] PeopleFiles = Directory.GetFiles("../PeopleSchedules");
+			String[] PeopleFiles = Directory.GetFiles("../../../PeopleSchedules");
 			List<Person> PeopleList = new List<Person>();
 			
 			foreach(String FileName in PeopleFiles)
 			{
 				StreamReader PersonReader = new StreamReader(FileName);
 				
-				//Parse 1 Person for Testing: Loop over all files later
 				String name = "";
 				String ID = "";
 				
@@ -100,11 +104,11 @@ namespace Scheduler
 				{
 					ID += (char)PersonReader.Read();
 				}
-				
-				//Skips the blank lines and junk
-				PersonReader.ReadLine();
-				PersonReader.ReadLine();
-				PersonReader.ReadLine();
+                Debug.WriteLine(name + " " + ID);
+                //Skips the blank lines and junk
+                Debug.WriteLine(PersonReader.ReadLine());
+                Debug.WriteLine(PersonReader.ReadLine());
+                Debug.WriteLine(PersonReader.ReadLine());
 				
 				bool[][] sched = new bool[7][];
 				
@@ -142,16 +146,14 @@ namespace Scheduler
 				for(int i=0; i<7; i++)
 				{
 					week[i] = new Day(sched[i]);
-					Debug.Write(week[i]);
-					Debug.Write("\n");
 				}
 				
-				Person temp = new Person(name, ID, week);
-				PeopleList.add(temp);
+				Person temp = new Person(name, ID, week, hours);
+				PeopleList.Add(temp);
 				
 				Debug.Write("\n");
 				temp.ConsoleDebug();
-				Out1 = temp.ToString();
+				//Out1 = temp.ToString();
 				//End Parse One Person for Testing
 			}
 			
@@ -167,6 +169,7 @@ namespace Scheduler
 					if(p.CanDo(j))
 					{
 						j.AddPerson(p);
+                        Debug.WriteLine(p + " can do " + j);
 						p.IncAvail(); // increase the availability score
 					}
 				}
@@ -180,51 +183,28 @@ namespace Scheduler
 			
             /** Calculate **/
 			bool flag = false;
-			Job offender;
+			Job offender = null;
 			foreach(Job j in JobsList)
 			{
 				if(!j.Calculate())
 				{
 					flag = true;
 					offender = j;
-					break;
 				}
-			}
+                if (flag)
+                {
+                    Debug.Write("Job \"" + offender.ToString() + "\" does not have possible doers!\n");
+                }
+            }
+
+            foreach(Job j in JobsList)
+            {
+                if(j.Result()!=null)
+                    Debug.WriteLine(j.Result());
+            }
 			
-			if(flag)
-			{
-				Debug.write("Job \"" + offender.toString() + "\" does not have possible doers!\n");
-			}
-			else
-			{
-				/** WriteResult **/
-				
-				
-			}
-
-            /* Testing for job collision
-            Person andy = new Person("Andy");
-            Job clean = new Job("clean", 0, 2, 1);
-            Job clean2 = new Job("clean", 0, 1, 1);
-
-            if (andy.AddJob(clean))
-            {
-                result1 = "Success";
-            }
-            else
-            {
-                result1 = "Failure";
-            }
-
-            if (andy.AddJob(clean2))
-            {
-                result2 = "Success";
-            }
-            else
-            {
-                result2 = "Failure";
-            }
-            */
+            /** WriteResult **/
+			
         }
     }
 }

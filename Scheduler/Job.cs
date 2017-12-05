@@ -27,14 +27,15 @@ namespace Scheduler
             possibleWorkers = new List<Person>(0);
         }
 
-        public bool AddPerson(Person p)
+        public void AddPerson(Person p)
         {
             this.possibleWorkers.Add(p);
         }
 		
-        public void SetDoer(Person p)
+        public int SetDoer(Person p)
         {
             this.doer = p;
+            return length;
         }
 		
         public bool Conflicts(Job j)
@@ -77,13 +78,14 @@ namespace Scheduler
 					break;
 				}
 			}
-			return bool;
+			return flag;
 		}
 		
-		
-		
-		
-		
+        public bool HoursChecker(int hours)
+        {
+            return this.length <= hours;
+        }
+
 		public void Sort()
 		{
 			this.possibleWorkers.Sort();
@@ -91,8 +93,15 @@ namespace Scheduler
 		
         public override string ToString()
         {
-            string result = name + " on " + day + " at " + time;
+            string result = name + " on " + Day.numberToDay(day) + " at " + time;
             return result;
+        }
+
+        public string Result()
+        {
+            if(this.doer != null)
+                return this.ToString() +" "+ this.doer.ToString();
+            return null;
         }
 
         public int CompareTo(Job other)
