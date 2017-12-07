@@ -27,7 +27,7 @@ public class Generator
 			
 			fw.write("Name:,"+name+"\n");
 			fw.write("Employee ID:,"+room+"\n");
-			fw.write(",,,,,,,\n");
+			fw.write("\n");
 			fw.write("Schedule,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday\n");
 			for(int i = 0; i < 24; i++)
 			{
