@@ -19,24 +19,14 @@ namespace Scheduler
 
         public void Form1_Load(object sender, EventArgs e)
         {
-
-        }
-
-        public void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        public void label2_Click(object sender, EventArgs e)
-        {
-
+            this.label1.Text = "How Many Hours should Each Worker Work?";
         }
 
         public void button1_Click(object sender, EventArgs e)
         {
-            Calculator.Calculate();
-            this.label1.Text = Calculator.Out1;
-            this.label2.Text = Calculator.Out2;
+            Calculator.Calculate(Int32.Parse(textBox1.Text));
+            MessageBox.Show("Finished Calculating. Check Results.txt", "Complete");
+            this.Close();
         }
     }
 }

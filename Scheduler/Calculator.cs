@@ -10,10 +10,6 @@ namespace Scheduler
 {
     static class Calculator
     {
-        public static String Out1;
-        public static String Out2;
-
-
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -25,118 +21,210 @@ namespace Scheduler
             Application.Run(new Login());
         }
 
-        public static void Calculate()
+        public static void Calculate(int hours)
         {
+
             /** Parse Jobs **/
+            StreamReader JobsReader = new StreamReader("../../Jobs/Jobs.csv");
+            List<Job> JobsList = new List<Job>();
+
+
+            while (!JobsReader.EndOfStream)
+            {
+                String name = "";
+                while (JobsReader.Peek() != ',')
+                {
+                    name += (char)JobsReader.Read();
+                }
+                Debug.WriteLine(name);
+                JobsReader.Read();
+
+                String temp = "";
+                while (JobsReader.Peek() != ',')
+                {
+                    temp += (char)JobsReader.Read();
+                }
+                JobsReader.Read();
+                Debug.WriteLine(temp);
+                int day = Int32.Parse(temp);
+
+                temp = "";
+                while (JobsReader.Peek() != ',')
+                {
+                    temp += (char)JobsReader.Read();
+                }
+                JobsReader.Read();
+                Debug.WriteLine(temp);
+                int time = Int32.Parse(temp);
+
+                temp = "";
+                while (JobsReader.Peek() != '\n')
+                {
+                    temp += (char)JobsReader.Read();
+                }
+                JobsReader.Read();
+                Debug.WriteLine(temp);
+                int length = Int32.Parse(temp);
+
+                JobsList.Add(new Job(name, day, time, length));
+            }
+
+            //Jobs List now contains all the Jobs
 
             /** Parse People **/
-            StreamReader sr = new StreamReader("../../../PeopleSchedules/test13.csv");
 
+            String[] PeopleFiles = Directory.GetFiles("../../../PeopleSchedules");
+            List<Person> PeopleList = new List<Person>();
 
-            //Parse 1 Person for Testing: Loop over all files later
-            String name = "";
-            String ID = "";
-
-            for (int i = 0; i < 6; i++)
-                sr.Read();
-
-            while (sr.Peek() != ',')
+            foreach (String FileName in PeopleFiles)
             {
-                name += (char)sr.Read();
-            }
+                StreamReader PersonReader = new StreamReader(FileName);
 
-            sr.ReadLine();
+                String name = "";
+                String ID = "";
 
-            for (int i = 0; i < 13; i++)
-                sr.Read();
+                for (int i = 0; i < 6; i++)
+                    PersonReader.Read();
 
-            while (sr.Peek() != '\n')
-            {
-                ID += (char)sr.Read();
-            }
-
-            //Skips the blank lines and junk
-            sr.ReadLine();
-            sr.ReadLine();
-            sr.ReadLine();
-
-            bool[][] sched = new bool[7][];
-
-            for(int i=0; i<7; i++)
-            {
-                sched[i] = new bool[24];
-            }
-
-
-            for(int i=0; i<24; i++)
-            {
-                while (sr.Peek() != ',')
-                    sr.Read();
-                sr.Read();
-                for (int j=0; j<7; j++)
+                while (PersonReader.Peek() != '\n' && PersonReader.Peek() != 13)
                 {
-                    if(sr.Peek() == ',')
-                    {
-                        sched[j][i] = false;
-                    }
-                    else
-                    {
-                        sched[j][i] = true;
-                    }
-
-                    while (sr.Peek() != ',')
-                        sr.Read();
-                    sr.Read();
+                    name += (char)PersonReader.Read();
                 }
-                sr.ReadLine();
-            }
 
-            Day[] week = new Day[7];
+                PersonReader.ReadLine();
 
-            for(int i=0; i<7; i++)
-            {
-                week[i] = new Day(sched[i]);
-                Debug.Write(week[i]);
+                for (int i = 0; i < 13; i++)
+                    PersonReader.Read();
+
+                while (PersonReader.Peek() != '\n' && PersonReader.Peek() != 13)
+                {
+                    ID += (char)PersonReader.Read();
+                }
+                Debug.WriteLine(name + " " + ID);
+                //Skips the blank lines and junk
+                Debug.WriteLine(PersonReader.ReadLine());
+                Debug.WriteLine(PersonReader.ReadLine());
+                Debug.WriteLine(PersonReader.ReadLine());
+
+                bool[][] sched = new bool[7][];
+
+                for (int i = 0; i < 7; i++)
+                {
+                    sched[i] = new bool[24];
+                }
+
+
+                for (int i = 0; i < 24; i++)
+                {
+                    while (PersonReader.Peek() != ',')
+                        PersonReader.Read();
+                    PersonReader.Read();
+                    for (int j = 0; j < 7; j++)
+                    {
+                        if (PersonReader.Peek() == ',')
+                        {
+                            sched[j][i] = false;
+                        }
+                        else
+                        {
+                            sched[j][i] = true;
+                        }
+
+                        while (PersonReader.Peek() != ',')
+                            PersonReader.Read();
+                        PersonReader.Read();
+                    }
+                    PersonReader.ReadLine();
+                }
+
+                Day[] week = new Day[7];
+
+                for (int i = 0; i < 7; i++)
+                {
+                    week[i] = new Day(sched[i]);
+                }
+
+                Person temp = new Person(name, ID, week, hours);
+                PeopleList.Add(temp);
+
                 Debug.Write("\n");
+                temp.ConsoleDebug();
+                //Out1 = temp.ToString();
+                //End Parse One Person for Testing
             }
 
-            Person temp = new Person(name, ID, week);
-
-            Debug.Write("\n");
-            temp.ConsoleDebug();
-
-            Out1 = temp.ToString();
-            //End Parse One Person for Testing
-
+            //People List now Contains all the People.
 
             /** PreProcess **/
+            /* For each job, add each person who can perform the job*/
+
+            foreach (Job j in JobsList)
+            {
+                foreach (Person p in PeopleList)
+                {
+                    if (p.CanDo(j))
+                    {
+                        j.AddPerson(p);
+                        Debug.WriteLine(p + " can do " + j);
+                        p.IncAvail(); // increase the availability score
+                    }
+                }
+                // For each job, sort possible workers by availability score
+                j.Sort();
+            }
+            // sort all jobs
+            JobsList.Sort();
+
+            //Now The JobsList is ready for calculating who does what
+
             /** Calculate **/
+            bool flag = false;
+            Job offender = null;
+            foreach (Job j in JobsList)
+            {
+                if (!j.Calculate())
+                {
+                    flag = true;
+                    offender = j;
+                }
+                if (flag)
+                {
+                    Debug.Write("Job \"" + offender.ToString() + "\" does not have possible doers!\n");
+                }
+            }
+
+
             /** WriteResult **/
 
+            StreamWriter file = new StreamWriter("../../../Results.txt", false);
 
-            /* Testing for job collision
-            Person andy = new Person("Andy");
-            Job clean = new Job("clean", 0, 2, 1);
-            Job clean2 = new Job("clean", 0, 1, 1);
+            foreach (Job j in JobsList)
+            {
+                if (j.Result() != null)
+                {
+                    Debug.WriteLine(j.Result());
+                    file.WriteLine(j.Result());
+                }
+                else
+                {
+                    Debug.WriteLine(j + " Needs Filling");
+                    file.WriteLine(j + " Needs Filling");
+                }
+            }
 
-            if (andy.AddJob(clean))
+            Debug.WriteLine("\nPeople who need assignments.");
+            file.WriteLine("\nPeople who need assignments.");
+
+            foreach(Person p in PeopleList)
             {
-                result1 = "Success";
-            }
-            else
-            {
-                result1 = "Failure";
+                if(!p.IsFull())
+                {
+                    Debug.WriteLine(p + " needs " + p.HoursNeeded() + " hours.");
+                    file.WriteLine(p + " needs " + p.HoursNeeded() + " hours.");
+                }
             }
 
-            if (andy.AddJob(clean2))
-            {
-                result2 = "Success";
-            }
-            else
-            {
-                result2 = "Failure";
-            }
-            */
+            file.Close();
         }
     }
 }

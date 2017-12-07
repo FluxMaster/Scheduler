@@ -9,6 +9,7 @@ namespace Scheduler
     class Day
     {
         //If person is blocked at "time i" then time[i]==true
+		//Conversely, if person is available at time i then time[i]==false;
         //24 hour clock where 0000 hours = time[0], 0100 hours == time[1], ..., 2300 hours == time[23]
         //Only 1 hour increments for now.
         private bool[] time; 

@@ -17,12 +17,12 @@ namespace Scheduler
         private Day[] week;
         private List<Job> jobsList;
 
-        public Person(String name, String ID)
+        public Person(String name, String ID, int hours)
         {
             this.name = name;
             this.ID = ID;
             this.avail = 0;
-            this.hours = 0;
+            this.hours = hours;
             jobsList = new List<Job>(0);
             week = new Day[7];
             for (int i = 0; i < 7; i++)
@@ -31,12 +31,12 @@ namespace Scheduler
             }
         }
 
-        public Person(String name, String ID, Day[] week)
+        public Person(String name, String ID, Day[] week, int hours)
         {
             this.name = name;
             this.ID = ID;
             this.avail = 0;
-            this.hours = 0;
+            this.hours = hours;
             jobsList = new List<Job>(0);
             this.week = week;
         }
@@ -53,9 +53,32 @@ namespace Scheduler
                 }
             }
 
-            j.SetDoer(this);
+            if(!j.HoursChecker(this.hours))
+            {
+                return false;
+            }
+
+            int hours = j.SetDoer(this);
+            DecHours(hours);
             jobsList.Add(j);
             return true;
+        }
+		
+		//returns true if this person is initially
+		//available for this job.
+		public bool CanDo(Job j)
+		{
+			return j.CanDoHelper(this.week);
+		}
+
+        public bool IsFull()
+        {
+            return hours == 0;
+        }
+
+        public int HoursNeeded()
+        {
+            return hours;
         }
 
         public int CompareTo(Person other)
@@ -76,13 +99,20 @@ namespace Scheduler
             this.avail++;
         }
 
+        public void DecHours(int hours)
+        {
+            this.hours -= hours;
+        }
+
         public override string ToString()
         {
-            String result = name + " " + ID + "\n";
-            foreach(Job job in jobsList)
+            String result = name + " " + ID;
+            /*
+            foreach (Job job in jobsList)
             {
                 result += job.ToString() + "\n";
             }
+            */
             return result;
         }
 

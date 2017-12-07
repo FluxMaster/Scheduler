@@ -1,0 +1,136 @@
+Dinner Cook on Monday at 10 BEN 303
+Dinner Cook on Tuesday at 10 JOHNNA 208
+Dinner Cook on Tuesday at 10 ETTA 14
+Dinner Cook on Monday at 10 ARGELIA 220
+Dinner Clean on Sunday at 12 PAMILA 120
+Dinner Clean on Sunday at 12 JOELLEN 512
+Dinner Clean on Sunday at 12 BELEN 520
+Lunch Cook on Thursday at 3 AUDRIA 314
+Lunch Cook on Thursday at 3 GABRIEL 502
+Dinner Clean on Sunday at 12 COLBY 218
+Lunch Cook on Thursday at 3 CECELIA 2
+Dinner Clean on Sunday at 12 KATHLINE 413
+Dinner Cook on Friday at 10 AMBER 306
+Dinner Cook on Wednesday at 10 SHEMEKA 114
+Lunch Cook on Monday at 3 ANDRA 516
+Dinner Cook on Friday at 10 CLEOPATRA 0
+Lunch Cook on Monday at 3 CECILE 400
+Lunch Cook on Monday at 3 TRUDI 311
+Dinner Cook on Wednesday at 10 ALBERTO 406
+Dinner Cook on Thursday at 10 JALISA 116
+Dinner Cook on Thursday at 10 CARMEL 305
+Dinner Clean on Thursday at 12 JALISA 116
+Dinner Clean on Thursday at 12 JARRED 310
+Dinner Clean on Thursday at 12 JEANICE 201
+Dinner Clean on Thursday at 12 JOLENE 502
+Dinner Clean on Thursday at 12 TRUDI 311
+Lunch Cook on Tuesday at 3 SHENA 412
+Lunch Cook on Tuesday at 3 AMY 212
+Dinner Clean on Friday at 12 ANGELE 405
+Dinner Clean on Friday at 12 LOUISE 419
+Dinner Clean on Friday at 12 MAJORIE 101
+Dinner Clean on Friday at 12 BELEN 520
+Dinner Clean on Friday at 12 JOELLEN 511
+Lunch Cook on Tuesday at 3 ANGELE 405
+Dinner Cook on Sunday at 10 PAMILA 120
+Dinner Cook on Sunday at 10 AMBER 306
+Lunch Cook on Friday at 3 DEVIN 320
+Brunch Cook on Saturday at 4 DORENE 402
+Brunch Cook on Saturday at 4 LEKISHA 19
+Brunch Cook on Saturday at 4 JOELLEN 512
+Dinner Prep on Wednesday at 8 MARHTA 106
+Lunch Cook on Friday at 3 SHENA 412
+Lunch Cook on Friday at 3 ANDRA 516
+Dinner Prep on Wednesday at 8 MARRY 12
+Dinner Clean on Monday at 12 ALBERTO 406
+Dinner Clean on Monday at 12 BEN 303
+Dinner Clean on Monday at 12 SACHIKO 314
+Dinner Clean on Monday at 12 TOBIE 506
+Dinner Clean on Monday at 12 ARGELIA 220
+Dinner Prep on Thursday at 8 MAJORIE 101
+Dinner Prep on Thursday at 8 AUDRIA 314
+Dinner Prep on Sunday at 8 DORENE 402
+Dinner Prep on Sunday at 8 HEATH 511
+Dinner Prep on Friday at 8 LEKISHA 19
+Dinner Prep on Friday at 8 HEATH 511
+Dinner Clean on Tuesday at 12 MARRY 12
+Dinner Prep on Monday at 8 CLEOPATRA 0
+Dishes and Salads on Tuesday at 11 AMY 212
+Dinner Prep on Monday at 8 SACHIKO 314
+Dinner Clean on Tuesday at 12 LOUISE 419
+Dinner Clean on Tuesday at 12 FRANCESCA 408
+Dinner Clean on Tuesday at 12 CARMEL 305
+Dinner Clean on Tuesday at 12 KATHLINE 413
+Dishes and Salads on Wednesday at 11 CECILE 400
+Fridge Clean on Saturday at 15 LAVERNE 320
+Dinner Clean on Wednesday at 12 SHEMEKA 114
+Dinner Clean on Wednesday at 12 FREDERICKA 100
+Dinner Clean on Wednesday at 12 FRANCESCA 408
+Dinner Clean on Wednesday at 12 MARHTA 106
+Dishes and Salads on Friday at 11 GABRIEL 502
+Dinner Clean on Wednesday at 12 ETTA 14
+Midnight Alice on Wednesday at 16 MILO 105
+Brunch Clean on Saturday at 7 DEVIN 320
+Dinner Prep on Tuesday at 8 FREDERICKA 100
+Dinner Prep on Tuesday at 8 JEANICE 201
+Midnight Alice on Friday at 16 GABRIEL 502
+Brunch Clean on Saturday at 7 LOLITA 318
+Brunch Clean on Saturday at 7 TOBIE 506
+Brunch Clean on Saturday at 7 DINORAH 201
+Midnight Alice on Friday at 16 LOLITA 318
+Midnight Alice on Wednesday at 16 CECELIA 2
+Morning Clean on Tuesday at 2 JOHNNA 208
+Morning Clean on Tuesday at 2 JORDON 515
+Pot Scrub on Thursday at 6 CECILE 400
+Lunch Cook on Wednesday at 3 MILO 105
+Morning Clean on Wednesday at 2 MILO 105
+Lunch Cook on Wednesday at 3 JOELLEN 511
+Lunch Cook on Wednesday at 3 DINORAH 201
+Morning Clean on Wednesday at 2 JOHNNA 208
+Midnight Alice on Tuesday at 16 JOLENE 502
+Dishes and Salads on Thursday at 11 JOLENE 502
+Midnight Alice on Tuesday at 16 JORDON 515
+Pot Scrub on Wednesday at 6 CECELIA 2
+Fridge Clean on Sunday at 15 AMY 212
+Lunch Clean on Monday at 7 LOLITA 318
+Lunch Clean on Monday at 7 SANTOS 415
+Fridge Clean on Friday at 15 JEANA 408
+Midnight Alice on Monday at 16 JORDON 515
+Midnight Alice on Monday at 16 LAVERNE 320
+Fridge Clean on Monday at 15 SANTOS 415
+Dishes and Salads on Sunday at 11 LAVERNE 320
+Morning Clean on Saturday at 3 EMILEE 516
+Morning Clean on Saturday at 3 JARRED 310
+Morning Clean on Monday at 2 MICHAL 106
+Lunch Clean on Friday at 7 EMILEE 516
+Morning Clean on Monday at 2 LAVERNE 320
+Pot Scrub on Monday at 6 SANTOS 415
+Dishes and Salads on Monday at 11 SANTOS 415
+Fridge Clean on Thursday at 15 EMILEE 516
+Lunch Clean on Wednesday at 7 JORDON 515
+Lunch Clean on Wednesday at 7 EMILEE 516
+Fridge Clean on Wednesday at 15 JARRED 310
+Lunch Clean on Friday at 7 DEXTER 415
+Lunch Clean on Thursday at 7 JEANA 408
+Lunch Clean on Thursday at 7 COLBY 218
+Morning Clean on Thursday at 2 COLBY 218
+Morning Clean on Thursday at 2 MICHAL 106
+Lunch Clean on Tuesday at 7 JEANA 408
+Lunch Clean on Tuesday at 7 DEXTER 415
+Midnight Alice on Sunday at 16 JEANA 408
+Midnight Alice on Saturday at 16 DEXTER 415
+Midnight Alice on Saturday at 16 MICHAL 106
+Midnight Alice on Saturday at 16 test 15 woop
+Midnight Alice on Sunday at 16 MICHAL 106
+Pot Scrub on Friday at 6 test 15 woop
+Morning Clean on Friday at 2 test 15 woop
+Morning Clean on Friday at 2 Andy 108
+Morning Clean on Sunday at 3 test 15 woop
+Morning Clean on Sunday at 3 Andy 108
+Midnight Alice on Thursday at 16 Andy 108
+Midnight Alice on Thursday at 16 Needs Filling
+Fridge Clean on Tuesday at 15 DEXTER 415
+Pot Scrub on Tuesday at 6 Andy 108
+
+People who need assignments.
+joe 121841 needs 4 hours.

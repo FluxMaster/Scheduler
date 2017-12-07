@@ -127,7 +127,7 @@ namespace Scheduler
         //displays instructions when instruction button clicked
         private void instBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Instructions go here.", "Instructions");
+            MessageBox.Show("Please Enter your name and ID. For each time slot that you are not available, type any text into the corresponding box.", "Instructions");
         }
 
         //saves all info on form to a csv file when save schedule button clicked
@@ -164,9 +164,9 @@ namespace Scheduler
                     //create streamwrite object to write to filestream
                     using (StreamWriter sw = new StreamWriter(fs))
                     {
-                        sw.WriteLine("Name:," + name + ",,,,,,");
+                        sw.WriteLine("Name:," + name);
                         sw.WriteLine("Employee ID:," + employeeID);
-                        sw.WriteLine(",,,,,,,");
+                        sw.WriteLine();
                         sw.WriteLine("Schedule,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday");
 
                         //writes first row of schedule textboxes with appropriate timeframe to csv file
@@ -210,6 +210,11 @@ namespace Scheduler
                     fs.Close(); //close filestream object
                 }
             }
+        }
+
+        private void nameTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
