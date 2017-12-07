@@ -164,7 +164,7 @@ namespace Scheduler
                     //create streamwrite object to write to filestream
                     using (StreamWriter sw = new StreamWriter(fs))
                     {
-                        sw.WriteLine("Name:," + name + ",,,,,,");
+                        sw.WriteLine("Name:," + name);
                         sw.WriteLine("Employee ID:," + employeeID);
                         sw.WriteLine(",,,,,,,");
                         sw.WriteLine("Schedule,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday");
@@ -210,6 +210,11 @@ namespace Scheduler
                     fs.Close(); //close filestream object
                 }
             }
+        }
+
+        private void nameTxtBox_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

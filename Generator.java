@@ -25,8 +25,8 @@ public class Generator
 			
 			FileWriter fw = new FileWriter("PeopleSchedules/"+(name+"_"+String.valueOf(room)+".csv"));
 			
-			fw.write("Name:,"+name+",,,,,,\n");
-			fw.write("Employee ID:,"+room+",,,,,,\n");
+			fw.write("Name:,"+name+"\n");
+			fw.write("Employee ID:,"+room+"\n");
 			fw.write(",,,,,,,\n");
 			fw.write("Schedule,Sunday,Monday,Tuesday,Wednesday,Thursday,Friday,Saturday\n");
 			for(int i = 0; i < 24; i++)

@@ -71,6 +71,16 @@ namespace Scheduler
 			return j.CanDoHelper(this.week);
 		}
 
+        public bool IsFull()
+        {
+            return hours == 0;
+        }
+
+        public int HoursNeeded()
+        {
+            return hours;
+        }
+
         public int CompareTo(Person other)
         {
             if (this.avail > other.avail)

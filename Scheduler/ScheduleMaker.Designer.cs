@@ -780,6 +780,7 @@
             this.nameTxtBox.Name = "nameTxtBox";
             this.nameTxtBox.Size = new System.Drawing.Size(100, 20);
             this.nameTxtBox.TabIndex = 75;
+            this.nameTxtBox.TextChanged += new System.EventHandler(this.nameTxtBox_TextChanged);
             // 
             // employeeIDTxtBox
             // 

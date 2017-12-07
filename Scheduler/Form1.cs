@@ -25,6 +25,8 @@ namespace Scheduler
         public void button1_Click(object sender, EventArgs e)
         {
             Calculator.Calculate(Int32.Parse(textBox1.Text));
+            MessageBox.Show("Finished Calculating. Check Results.txt", "Complete");
+            this.Close();
         }
     }
 }
