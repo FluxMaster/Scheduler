@@ -1977,6 +1977,7 @@
             this.Controls.Add(this.roomL);
             this.Controls.Add(this.saveBtn);
             this.Controls.Add(this.nameL);
+            this.KeyPreview = true;
             this.Name = "ScheduleMaker";
             this.Text = "Empoyee Schedule Maker";
             this.Load += new System.EventHandler(this.Form1_Load);

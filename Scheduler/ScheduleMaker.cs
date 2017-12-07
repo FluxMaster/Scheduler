@@ -6,6 +6,7 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -47,6 +48,16 @@ namespace Scheduler
                 ,{txtBox148, txtBox149, txtBox150, txtBox151, txtBox152, txtBox153, txtBox154}
                 ,{txtBox155, txtBox156, txtBox157, txtBox158, txtBox159, txtBox160, txtBox161}
                 ,{txtBox162, txtBox163, txtBox164, txtBox165, txtBox166, txtBox167, txtBox168 } };
+
+            for(int row=0;row<schedule.GetLength(0);row++)
+            {
+                for(int col=0;col<schedule.GetLength(1);col++)
+                {
+                    schedule[row,col].KeyPress += new System.Windows.Forms.KeyPressEventHandler(txtBox_KeyPress);
+                }
+            }
+            nameTxtBox.KeyPress+= new System.Windows.Forms.KeyPressEventHandler(txtBox_KeyPress);
+            employeeIDTxtBox.KeyPress+= new System.Windows.Forms.KeyPressEventHandler(txtBox_KeyPress);
 
         }
 
@@ -215,6 +226,15 @@ namespace Scheduler
         private void nameTxtBox_TextChanged(object sender, EventArgs e)
         {
 
+        }
+        
+        private void txtBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (System.Text.RegularExpressions.Regex.IsMatch(e.KeyChar.ToString(), @"[^a-zA-Z0-9\s\b]"))
+            {
+                // Stop the character from being entered into the control since it is illegal.
+                e.Handled = true;
+            }
         }
     }
 }

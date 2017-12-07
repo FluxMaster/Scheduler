@@ -35,7 +35,8 @@ namespace Scheduler
             //if incorrect password, show error message
             else
             {
-                MessageBox.Show("Wrong password.");
+                MessageBox.Show("Wrong password.", "Try Again");
+                passwrdTxtBox.Text = "";
             }
         }
 
