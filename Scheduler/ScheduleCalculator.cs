@@ -38,7 +38,7 @@ namespace Scheduler
         //displays about info when clicked
         private void aboutBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Program for UHV Software Engineering Class Fall 2017.\n Authors: Fransico Guerro, Andy Polasek, Jesse Sylva.", "About");
+            MessageBox.Show("Program for UHV Software Engineering Class Fall 2017.\n Authors: Francisco Guerrero, Andy Polasek, Jesse Sylva.", "About");
         }
     }
 }
